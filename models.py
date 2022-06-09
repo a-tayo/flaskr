@@ -15,3 +15,10 @@ class Plants(db.Model):
     scientific_name = db.Column(db.String)
     is_poisonous = db.Column(db.Boolean, nullable=False)
     primary_color = db.Column(db.String)
+
+    def format(self):
+        return {'name': self.name,
+                'scientific_name': self.scientific_name,
+                'is_poisonous': self.is_poisonous,
+                'primary_color': self.primary_color
+                }
