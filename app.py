@@ -25,10 +25,10 @@ def get_plants():
     plants = Plants.query.all()
 
     # calls the format method of the Plants class
-    formatted_plants = [plant.format for plant in plants]
+    formatted_plants = [plant.format() for plant in plants]
     return jsonify({
         'success': True,
-        'pages': formatted_plants[start:end],
+        'plants': formatted_plants[start:end],
         'results': len(formatted_plants)
     })
 
@@ -37,6 +37,4 @@ def smiley():
     return ':)'
 
 if __name__ == '__main__':
-    app.debug = True
-    app.Environment = 'Development'
     app.run()

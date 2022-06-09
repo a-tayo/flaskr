@@ -14,4 +14,4 @@ DATABASE_NAME = 'plants'
 SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@localhost:5432/{}'.format(username, password, DATABASE_NAME)
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 DEBUG = True
-ENVIRONMENT = 'development'
+ENV = 'development'
