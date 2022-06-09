@@ -32,9 +32,13 @@ def get_plants():
         'results': len(formatted_plants)
     })
 
-@app.route('/smiley')
-def smiley():
-    return ':)'
+@app.route('/plants/<int:plant_id>')
+def get_single_plant(plant_id):
+    plant = Plants.query.get_or_404(plant_id)
+    return jsonify({
+        'success': True,
+        'plant': plant.format()
+    })
 
 if __name__ == '__main__':
     app.run()
